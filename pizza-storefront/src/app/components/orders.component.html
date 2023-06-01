@@ -1,0 +1,56 @@
+<p>
+    Orders for {{email}}
+</p>
+
+<ul *ngIf="orders$ | async as OrderResponse; else loading">
+    <li *ngFor="let order of orders">
+        <p>
+            Date: {{order.date}}
+        </p>
+        <p>
+            Order id: {{order.id}}
+        </p>
+        <p>
+            ${{order.total}}
+        </p>
+    </li>
+</ul>
+
+<button type="button" (click)="back()">
+    Back to Ordering
+</button>
+
+<ng-template #loading>
+    <div class="center">
+        <code>Loading...</code>
+    </div>
+</ng-template>
+s!
+
+<p>
+    Orders for {{customer.email}}
+</p>
+
+<ul *ngIf="orders$ | async as OrderResponse; else loading">
+    <li *ngFor="let order of orders">
+        <p>
+            Date: {{order.date}}
+        </p>
+        <p>
+            Order id: {{order.id}}
+        </p>
+        <p>
+            ${{order.total}}
+        </p>
+    </li>
+</ul>
+
+<button type="button" (click)="back()">
+    Back to Ordering
+</button>
+
+<ng-template #loading>
+    <div class="center">
+        <code>Loading...</code>
+    </div>
+</ng-template>
